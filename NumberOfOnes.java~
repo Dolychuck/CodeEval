@@ -18,10 +18,11 @@ public class Main {
 	
 	public static int numberOfOnes(int num) {
 		int result = 0;
-		while(num > 0) {
-			if(num % 2 == 1)
+		for(int i = 16; i >= 0; i--) {
+			if(Math.pow(2, i) <= num) {
+				num = num - (int) Math.pow(2, i); 
 				result++;
-			num/=2;
+			}
 		}
 		return result;
 	}
